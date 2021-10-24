@@ -1,0 +1,23 @@
+type InboxAdded @entity {
+  id: ID!
+  owner: Bytes! # address
+  name: String! # string
+  description: String! # string
+  condition_nftContract: Bytes! # address
+  condition_count: BigInt! # uint256
+}
+
+type KeyAdded @entity {
+  id: ID!
+  sender: Bytes! # address
+  key: String! # string
+}
+
+type Send @entity {
+  id: ID!
+  sender: Bytes! # address
+  receiver: Bytes! # address
+  content: String! # string
+  inboxName: String! # string
+  encrypted: Boolean! # bool
+}
